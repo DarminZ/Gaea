@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Gaea</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Gaea</title>
+  <script>
+    function setJSONP(res) {
+      document.getElementById('resByJSONP').innerHTML = res.first_name + ' ' + res.last_name
+    }
+    var sseSource = null
+    function callSSE() {
+      sseSource = new EventSource('http://localhost:8081/sse')
+      sseSource.onmessage = function (event) {
+        var data = event.data
+        console.log('sse:', data)
+      }
+    }
+
+    function stopSSE() {
+      if (sseSource) {
+        sseSource.close()
+        sseSource = null
+      }
+    }
+  </script>
+</head>
+<body>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
 </html>

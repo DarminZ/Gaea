@@ -36,7 +36,6 @@
     import ElFormItem from 'element-ui/packages/form/src/form-item'
     import ElInput from 'element-ui/packages/input/src/input'
     import ElButton from 'element-ui/packages/button/src/button'
-    import qs from 'qs'
 
     export default {
       components: {
@@ -113,7 +112,7 @@
             username: this.input.username,
             password: this.input.password
           }
-          axios.post(url.testLoginURL, qs.stringify(input)).then(response => {
+          axios.post(url.loginURL, input).then(response => {
             this.ui.isLogining = false
             let data = response.data
             console.log(response)
@@ -137,6 +136,7 @@
 
 <style scoped>
   .el-form {
+    text-align: center;
     margin-top: 70px;
     padding: 30px 50px 50px 50px;
     size: 16px;

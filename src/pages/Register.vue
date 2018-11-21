@@ -120,6 +120,7 @@
     background-image: url("../assets/backimg.jpg");
   }
   .el-form {
+    text-align: center;
     margin-top: 70px;
     padding: 30px 50px 50px 50px;
     size: 16px;

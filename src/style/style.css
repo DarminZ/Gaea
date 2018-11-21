@@ -1,0 +1,88 @@
+[v-cloak]{
+    display: none;
+}
+.qs-card{
+    width: 300px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #888888;
+    text-align: left;
+}
+.z-btn{
+    position: relative;
+    width: 80px;
+    height: 35px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor:pointer;
+}
+.z-btn:before{
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 4px;
+    background:rgba(0,0,0,.2);
+}
+.z-btn:hover:before{
+    content:"";
+}
+.z-btn:after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 4px;
+    background:rgba(255,255,255,.2);
+}
+.z-btn:active:after{
+    content:"";
+}
+.z-btn-default{
+    border-color: #ccc;
+    background-color: #fff;
+    color: #000;
+}
+.z-btn-primary{
+    background-color: #337ab7;
+    color: #fff;
+}
+.z-btn-disabled{
+    color: #ccc;
+}
+.z-askpaper-panel .head{
+    height: 20px;
+    text-align: center;
+    color: #ccc;
+    font-size: 10px;
+}
+.z-askpaper-panel .main{
+    height: 320px;
+}
+.z-askpaper-panel .footer{
+    height: 60px;
+    text-align: center;
+}
+.z-askpaper-panel .option{
+    margin-top: 6px;
+    margin-left: 6px;
+}
+.z-askpaper-panel .option:hover{
+    background: #ccc;
+}
+.z-askpaper-panel .option:active{
+    background: #bcc;
+}
+.z-askpaper-panel .text-answer{
+    width: 95%;
+}

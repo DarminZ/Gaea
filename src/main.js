@@ -5,10 +5,16 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import * as axios from 'axios'
+
+import ZComponent from './components'
+import './style/style.css'
 
 Vue.use(ElementUI)
+Vue.use(ZComponent)
 
 Vue.config.productionTip = false
+Vue.prototype.$axios = axios
 
 /* eslint-disable no-new */
 new Vue({

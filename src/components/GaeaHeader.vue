@@ -18,7 +18,9 @@
           suffix-icon="el-icon-search">
         </el-input>
       </div>
-      <div class="userInfo"><a href="/#/login">登录</a></div>
+      <div class="userInfo">
+        <a v-if="logined" href="/#/login">登录</a>
+      </div>
 
     </el-container>
   </div>

@@ -5,21 +5,12 @@
         <gaea-header></gaea-header>
       </el-header>
       <el-main>
-        <div class="carousel">
-          <el-carousel :interval="6000" trigger="click" type="card" height="300px">
-            <el-carousel-item>
-              <img src="../assets/newyear.png" @click="gotoURL('/#/login')"/>
-            </el-carousel-item>
-            <el-carousel-item>
-              <img src="../assets/newyear.png"/>
-            </el-carousel-item>
-            <el-carousel-item>
-              <img src="../assets/newyear.png"/>
-            </el-carousel-item>
-          </el-carousel>
+        <div class="main">
+          <z-askpaper :paper-infos="paperInfos" @submit="submit"></z-askpaper>
+
         </div>
-        <div class="module">
-          <img src="../assets/img.jpg"/>
+        <div class="main-right">
+
         </div>
       </el-main>
       <el-footer>
@@ -36,21 +27,80 @@
   export default {
     components: {
       GaeaFooter,
-      GaeaHeader},
+      GaeaHeader
+    },
     name: 'home',
-    methods: {
-      gotoURL (url) {
-        window.location.href = url
+    data () {
+      return {
+        paperInfos: [
+          {
+            type: 'single',
+            question: '请问您的性别是',
+            answer: {
+              key: 'sex',
+              value: '',
+              options: ['男', '女', '保密']
+            }
+          },
+          {
+            type: 'multiple',
+            question: '请选择你的兴趣爱好',
+            answer: {
+              key: 'interest',
+              value: [],
+              options: ['看书', '游泳', '跑步', '看电影', '听歌']
+            }
+          },
+          {
+            type: 'text',
+            question: '请选择你的兴趣爱好',
+            answer: {
+              key: 'introduce',
+              value: ''
+            }
+          }
+        ]
       }
+    },
+    methods: {
+      submit: function () {
+        var result = []
+        this.paperInfos.forEach(function (paperItem) {
+          result.push(paperItem.answer.key, paperItem.answer.value)
+        })
+        alert('submit:' + result)
+      }
+    },
+    mounted () {
     }
   }
 </script>
 
 <style scoped>
-  .el-header,.el-footer {
+  .el-header, .el-footer {
     padding: 0px;
+    text-align: center;
+    color: #2c3e50;
   }
+
   .el-main {
     padding: 0px;
+    box-sizing: border-box;
+    position: relative;
+    margin: 10px auto;
+    min-width: 600px;
+    max-width: 800px;
+  }
+
+  .main {
+    width: 100%;
+    float: left;
+    padding-right: 200px;
+  }
+
+  .main-right {
+    width: 200px;
+    float: left;
+    margin-left: -200px;
   }
 </style>

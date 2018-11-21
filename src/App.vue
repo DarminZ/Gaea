@@ -15,11 +15,15 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
   }
-  body{
-    margin:0px auto;
-    padding:0px;
+
+  body {
+    margin: 0px auto;
+    padding: 0px;
+    background: #f6f6f6;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 </style>
